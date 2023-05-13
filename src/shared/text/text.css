@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Nonito", Verdana, sans-serif;
+  src: url("../../assets/fonts/NunitoSans_10pt-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.Text_font__normal {
+  font-family: "Nonito";
+  font-size: 16px;
+  line-height: 26px;
+}
+.Header_font__normal {
+  font-family: "Nonito";
+  font-size: 40px;
+  line-height: 40px;
+}
