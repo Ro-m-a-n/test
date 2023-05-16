@@ -1,16 +1,13 @@
 import { useContext } from "react";
 import { AppContext } from "../store/appContext";
-import Text from "../shared/text/text";
-import DownloadBlock from "../widgets/downloadBlock/downloadBlock";
+import { Text } from './../shared/text/text';
 
 const WelcomePage = () => {
   const {} = useContext(AppContext);
 
   return (
     <>
-      <Text>{"hello"}</Text>
-
-      <DownloadBlock />
+      <Text />
     </>
   );
 };

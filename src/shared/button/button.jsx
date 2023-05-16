@@ -1,52 +1,27 @@
 import React from "react";
-import CircularProgress from "@mui/material/CircularProgress";
-import "./Button.scss";
-
+import "./button.css";
 export const Button = ({
   design,
-  size,
   disabled,
-  children,
-  loading,
-  handleClick,
   stackClassName,
-  ...props
+  text,
+  type,
+  font,
 }) => {
-  const classes = [
-    "Button",
-    `Button_design__${design}`,
-    `Button_size__${size}`,
-  ];
+  const classes = ["Button", `${design}`, `Text_font__${font}`];
 
   return (
-    <div className={`${stackClassName} Button_wrapper`}>
-      <button
-        {...props}
-        // TODO
-        // eslint-disable-next-line react/button-has-type
-        disabled={loading || disabled}
-        className={classes.join(" ")}
-        onClick={handleClick}
-      >
-        {loading ? (
-          <CircularProgress
-            color={design === "primary" ? "primary" : "secondary"}
-            size="22px"
-          />
-        ) : (
-          children
-        )}
+    <div className={`Button_wrapper ${stackClassName} `}>
+      <button className={classes.join(" ")} type={type} disabled={disabled}>
+        {text}
       </button>
     </div>
   );
 };
 
 Button.defaultProps = {
+  font: "normal",
   type: "button",
-  size: "medium",
-  loading: false,
-  disabled: false,
-  handleClick: undefined,
 };
 
 export default Button;

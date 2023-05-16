@@ -2,16 +2,8 @@
   background-color: #f4e041;
 }
 .blue {
-  background-color: #00BDD3;
+  background-color: #00bdd3;
 }
 .lightGray {
-  background-color: #F8F8F8;
-}
-.error_text{
-  color: red;
-  font-size: small;
-}
-.error_border{
-  border-color: red;
- 
+  background-color: #f8f8f8;
 }
