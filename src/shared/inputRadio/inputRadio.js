@@ -1,19 +1,20 @@
 import { Text } from "./../text/text";
 import "./inputRadio.css";
 
-const InputRadio = ({ name, values, formik, design }) => {
-  const item = values.map((value) => {
+const InputRadio = ({ name, positions, formik }) => {
+  const item = positions?.map((position) => {
     return (
-      <div className="inputRadio_wrapper">
+      <div key={position.id} className="inputRadio_wrapper">
         <input
+          id={position.id}
           className="inputRadio"
           type="radio"
           name={name}
-          value={value}
-          checked={formik.values[name] === value}
+          value={position.id.toString()}
+          checked={formik.values[name] === position.id.toString()}
           onChange={formik.handleChange}
         />
-        <Text>{value}</Text>
+        <Text>{position.name}</Text>
       </div>
     );
   });

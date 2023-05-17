@@ -6,7 +6,6 @@ const Input = ({
   font,
   name,
   type,
-  id,
   value,
   onChange,
   onBlur,
@@ -28,13 +27,12 @@ const Input = ({
         className={`Text_font__${font}`}
         type={type}
         placeholder={placeholder}
-        id={id}
+        id={name}
         value={value}
         onChange={onChange}
         name={name}
         onBlur={onBlur}
         style={{
-          
           borderColor: error && "red",
           borderWidth: error && "2px",
         }}

@@ -1,0 +1,17 @@
+.user_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+  margin: 20px;
+}
+
+.user_photo {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.user_name {
+  margin-bottom: 20px;
+}

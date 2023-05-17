@@ -2,48 +2,56 @@ import { useFormik } from "formik";
 import Input from "../../shared/input/Input";
 import Upload from "../../shared/upload/upload";
 import { Button } from "./../../shared/button/button";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import InputRadio from "../../shared/inputRadio/inputRadio";
 import "./formik.css";
 import { Header } from "./../../shared/text/header";
+import { emailPattern } from "./pattern";
+import { AppContext } from "../../store/appContext";
+import { signUp } from "../../features/asyncFunctions";
 
 const Formik = () => {
+  const { positions, token, setToken } = useContext(AppContext);
   const validate = (values) => {
     const errors = {};
     if (formik.touched.name && !values.name) {
       errors.name = "Field is required";
-    } else if (formik.touched.name && values.name.length < 2) {
-      errors.name = "Must be at least 2 characters";
-    } else if (values.name.length > 20) {
-      errors.name = "Must be 20 characters or less";
+    } else if (
+      formik.touched.name &&
+      (values.name.length < 2 || values.name.length > 60)
+    ) {
+      errors.name = "Must be from 2 to 60 characters";
     }
 
     if (formik.touched.email && !values.email) {
       errors.email = "Field is required";
-    } else if (
-      formik.touched.email &&
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
+    } else if (formik.touched.email && !emailPattern.test(values.email)) {
       errors.email = "Invalid email address";
     }
     if (formik.touched.phone && !values.phone) {
-      errors.phone = "+38(XXX) XXX-XX-XX Field is required";
+      errors.phone = "+38xxxxxxxxxx Field is required";
     } else if (
       formik.touched.phone &&
-      !/^\+38\(\d{3}\) \d{3}-\d{2}-\d{2}$/i.test(values.phone)
+      !/^[\+]{0,1}380([0-9]{9})$/i.test(values.phone)
     ) {
-      errors.phone = "+38(XXX) XXX-XX-XX This format required";
+      errors.phone = "+38xxxxxxxxxx This format required";
     }
     if (formik.touched.photo && !values.photo) {
       errors.photo = "Field is required";
     } else if (
       values.photo &&
-      values.photo.type !== "image/png" &&
+      values.photo.type !== "image/jpg" &&
       values.photo.type !== "image/jpeg"
     ) {
-      errors.photo = "Invalid file format. Please upload a PNG or JPEG image.";
+      errors.photo = "Invalid file format. Please upload a JPG or JPEG image.";
+    } else if (values.photo && values.photo.size > 5242880) {
+      errors.photo = "Photo size must not be greater than 5 Mb.";
+    } else if (
+      values.photo &&
+      (values.photo.width < 70 || values.photo.height < 70)
+    ) {
+      errors.photo = "Minimum size of photo 70x70px";
     }
-
     return errors;
   };
 
@@ -52,22 +60,25 @@ const Formik = () => {
       name: "",
       email: "",
       phone: "",
-      position: "Frontend developer",
+      position_id: "1",
       photo: null,
     },
     validate,
     validateOnChange: false,
     validateOnBlur: true,
 
-    onSubmit: (data) => {
-      console.log("form data", data);
+    onSubmit: (values) => {
+      const { position_id, name, email, phone, photo } = values;
+      const formData = new FormData();
+      formData.append("position_id", position_id);
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", phone);
+      formData.append("photo", photo);
+      signUp(token, setToken, formData);
       formik.resetForm();
     },
   });
-
-  console.log("errors", formik.errors);
-  console.log("isValid", formik.isValid);
-  console.log("touched", formik.touched);
 
   useEffect(() => {
     formik.validateForm();
@@ -76,8 +87,7 @@ const Formik = () => {
     <form onSubmit={formik.handleSubmit} className="form_wrapper">
       <Header size="h1">Working with POST request</Header>
       <Input
-        id="name"
-        name={"name"}
+        name="name"
         placeholder={"Your name"}
         onChange={formik.handleChange}
         value={formik.values.name}
@@ -85,8 +95,7 @@ const Formik = () => {
         onBlur={formik.handleBlur}
       />
       <Input
-        id="email"
-        name={"email"}
+        name="email"
         placeholder={"Email"}
         type="email"
         onChange={formik.handleChange}
@@ -95,10 +104,9 @@ const Formik = () => {
         onBlur={formik.handleBlur}
       />
       <Input
-        id="phone"
-        name={"phone"}
+        name="phone"
         placeholder={"Phone"}
-        helperText={"+38(XXX) XXX-XX-XX"}
+        helperText={"+38xxxxxxxxxx"}
         type="tel"
         onChange={formik.handleChange}
         value={formik.values.phone}
@@ -106,11 +114,7 @@ const Formik = () => {
         onBlur={formik.handleBlur}
       />
 
-      <InputRadio
-        name="position"
-        values={["Frontend developer", "Backend developer", "Designer", "QA"]}
-        formik={formik}
-      />
+      <InputRadio name="position_id" positions={positions} formik={formik} />
 
       <Upload
         name="photo"
@@ -121,7 +125,7 @@ const Formik = () => {
       />
 
       <Button
-        design={"yellow"}
+        design="yellow"
         text="Sign up"
         type="submit"
         disabled={
