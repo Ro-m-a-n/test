@@ -1,7 +1,7 @@
-const API_URL = "https://frontend-test-assignment-api.abz.agency/";
+const API_URL = "https://frontend-test-assignment-api.abz.agency/api/v1/";
 
 export const getPositionsAPI = async () =>
-  await fetch(API_URL + "api/v1/positions").then((res) => {
+  await fetch(API_URL + "positions").then((res) => {
     if (!res.ok) {
       throw Error("Network response was not ok");
     }
@@ -11,13 +11,13 @@ export const getPositionsAPI = async () =>
   });
 
 export const getTokenAPI = async () => {
-  const res = await fetch(API_URL + "api/v1/token");
+  const res = await fetch(API_URL + "token");
   const resJson = await res.json();
   return resJson;
 };
 
 export const signUpAPI = async (token, formData) => {
-  const res = await fetch(API_URL + "api/v1/users", {
+  const res = await fetch(API_URL + "users", {
     method: "POST",
     headers: { token: token },
     body: formData,
@@ -25,28 +25,16 @@ export const signUpAPI = async (token, formData) => {
   const resJson = await res.json();
   return resJson;
 };
+export const getUsersAPI = async (pageQuantity, usersQuantity) => {
+  const res = await fetch(
+    API_URL + `users?page=${pageQuantity}&count=${usersQuantity}`
+  );
+  const resJson = await res.json();
+  return resJson;
+};
 
-// export const deleteNoteAPI = (noteId) =>
-//   fetch(API_URL + `apps/${appId}/dtypes/${noteId}.json`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//     body: JSON.stringify({
-//       rest_api_key: API_key,
-//     }),
-//   });
-
-// export const updateNoteAPI = (noteId, newNote) =>
-//   fetch(API_URL + `apps/${appId}/dtypes/${noteId}.json`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//     body: JSON.stringify({
-//       rest_api_key: API_key,
-//       values: {
-//         cyW4vsW5fiW47dIg8uWOfD: newNote,
-//       },
-//     }),
-//   });
+export const showMoreUsersAPI = async (next_url) => {
+  const res = await fetch(next_url);
+  const resJson = await res.json();
+  return resJson;
+};

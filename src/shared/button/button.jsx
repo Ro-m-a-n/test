@@ -7,12 +7,18 @@ export const Button = ({
   text,
   type,
   font,
+  onClick,
 }) => {
   const classes = ["Button", `${design}`, `Text_font__${font}`];
 
   return (
     <div className={`Button_wrapper ${stackClassName} `}>
-      <button className={classes.join(" ")} type={type} disabled={disabled}>
+      <button
+        className={classes.join(" ")}
+        type={type}
+        disabled={disabled}
+        onClick={onClick}
+      >
         {text}
       </button>
     </div>
@@ -22,6 +28,7 @@ export const Button = ({
 Button.defaultProps = {
   font: "normal",
   type: "button",
+  handleClick: undefined,
 };
 
 export default Button;
