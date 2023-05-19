@@ -1,8 +1,8 @@
 import React from "react";
 import "./text.css";
 
-export const Text = ({ font, children }) => {
-  const classes = ["Text", `Text_font__${font}`];
+export const Text = ({ font, children, color }) => {
+  const classes = ["Text", `Text_font__${font} ${color}`];
   return <p className={classes.join(" ")}>{children}</p>;
 };
 

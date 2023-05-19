@@ -7,7 +7,7 @@ import { AppProvider } from "./store/appContext";
 function App() {
   return (
     <AppProvider>
-      <WelcomePage/>
+      <WelcomePage />
       <UserListPage />
       <SignUpPage />
     </AppProvider>

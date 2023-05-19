@@ -9,7 +9,7 @@ export const Button = ({
   font,
   onClick,
 }) => {
-  const classes = ["Button", `${design}`, `Text_font__${font}`];
+  const classes = ["Button", design, `Text_font__${font}`];
 
   return (
     <div className={`Button_wrapper ${stackClassName} `}>

@@ -1,0 +1,36 @@
+.welcomePage_wrapper {
+  position: relative;
+  min-height: 300px;
+  min-width: 350px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.welcomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  height: 100%;
+  margin: auto;
+  margin-top: 15px;
+}
+.backgroundImage {
+  background-image: url("../assets/image/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  object-fit: cover;
+  min-height: 40%;
+  height: 70vh;
+  min-height: 350px;
+  max-width: 1200px;
+  margin: auto;
+  filter: brightness(0.55) contrast(0.8);
+}

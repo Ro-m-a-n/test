@@ -1,7 +1,7 @@
 import React from "react";
 import "./text.css";
-const _Header = ({ font, size, children }) => {
-  const classes = ["Header", `Header_font__${font}`];
+const _Heading = ({ font, size, children, color }) => {
+  const classes = ["Heading", `Header_font__${font} ${color}`];
   if (size && size === "h1") {
     return <h1 className={classes.join(" ")}>{children}</h1>;
   } else if (size === "h2") {
@@ -10,15 +10,15 @@ const _Header = ({ font, size, children }) => {
   return <h3 className={classes.join(" ")}>{children}</h3>;
 };
 
-export const Header = ({ font, size, children }) => {
+export const Heading = ({ font, size, children, color }) => {
   return (
-    <_Header font={font} size={size}>
+    <_Heading font={font} size={size} color={color}>
       {children}
-    </_Header>
+    </_Heading>
   );
 };
-Header.defaultProps = {
+Heading.defaultProps = {
   font: "normal",
 };
 
-export default Header;
+export default Heading;

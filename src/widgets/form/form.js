@@ -1,17 +1,20 @@
 import { useFormik } from "formik";
 import Input from "../../shared/input/Input";
 import Upload from "../../shared/upload/upload";
-import { Button } from "./../../shared/button/button";
-import { useContext, useEffect } from "react";
+import { Button } from "../../shared/button/button";
+import { useContext, useEffect, useState } from "react";
 import InputRadio from "../../shared/inputRadio/inputRadio";
-import "./formik.css";
-import { Header } from "./../../shared/text/header";
+import "./form.css";
+import { Heading } from "../../shared/text/heading";
 import { emailPattern } from "./pattern";
 import { AppContext } from "../../store/appContext";
-import { signUp } from "../../features/asyncFunctions";
+import { getUsers, signUp } from "../../features/asyncFunctions";
+import Preloader from "../../shared/preloader/preloader";
 
-const Formik = () => {
-  const { positions, token, setToken } = useContext(AppContext);
+const Form = ({ type }) => {
+  const { positions, usersPageSettings, setUrlLinks, setUsers, setSendedForm } =
+    useContext(AppContext);
+  const [isFetchingForm, setIsFetchingForm] = useState(false);
   const validate = (values) => {
     const errors = {};
     if (formik.touched.name && !values.name) {
@@ -75,7 +78,16 @@ const Formik = () => {
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("photo", photo);
-      signUp(token, setToken, formData);
+      signUp(
+        setIsFetchingForm,
+        formData,
+        usersPageSettings.pageQuantity,
+        usersPageSettings.usersQuantity,
+        setUrlLinks,
+        setUsers,
+        getUsers,
+        setSendedForm
+      );
       formik.resetForm();
     },
   });
@@ -84,8 +96,12 @@ const Formik = () => {
     formik.validateForm();
   }, [formik.values?.photo]);
   return (
-    <form onSubmit={formik.handleSubmit} className="form_wrapper">
-      <Header size="h1">Working with POST request</Header>
+    <form
+      onSubmit={formik.handleSubmit}
+      className="form_wrapper"
+      id="login-form"
+    >
+      <Heading size="h1">Working with POST request</Heading>
       <Input
         name="name"
         placeholder={"Your name"}
@@ -123,23 +139,27 @@ const Formik = () => {
         error={formik.errors.photo}
         onBlur={formik.handleBlur}
       />
-
-      <Button
-        design="yellow"
-        text="Sign up"
-        type="submit"
-        disabled={
-          !(
-            formik.isValid &&
-            formik.values.name &&
-            formik.values.email &&
-            formik.values.phone &&
-            formik.values.photo
-          )
-        }
-      />
+      {isFetchingForm ? (
+        <Preloader type="normal" />
+      ) : (
+        <Button
+          design="yellow"
+          text="Sign up"
+          type="submit"
+          stackClassName="form_btn"
+          disabled={
+            !(
+              formik.isValid &&
+              formik.values.name &&
+              formik.values.email &&
+              formik.values.phone &&
+              formik.values.photo
+            )
+          }
+        />
+      )}
     </form>
   );
 };
 
-export default Formik;
+export default Form;

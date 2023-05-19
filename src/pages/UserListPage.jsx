@@ -1,17 +1,25 @@
 import "./userListPage.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../store/appContext";
-import Header from "../shared/text/header";
+import Heading from "../shared/text/heading";
 import UserCard from "../widgets/userCard/userCard";
 import { Button } from "./../shared/button/button";
 import { getUsers, showMoreUsers } from "../features/asyncFunctions";
+import Preloader from "../shared/preloader/preloader";
 
 const UserListPage = () => {
   const { urlLinks, setUrlLinks, usersPageSettings, users, setUsers } =
     useContext(AppContext);
+  const [isFetchingUsers, setIsFetchingUsers] = useState(false);
 
   const handleClick = () => {
-    showMoreUsers(urlLinks.next_url, setUrlLinks, users, setUsers);
+    showMoreUsers(
+      urlLinks.next_url,
+      setUrlLinks,
+      users,
+      setUsers,
+      setIsFetchingUsers
+    );
   };
   useEffect(() => {
     getUsers(
@@ -22,12 +30,16 @@ const UserListPage = () => {
     );
   }, []);
   return (
-    <div className="users_wrapper">
-      <Header size="h1"> Working with GET request</Header>
+    <div className="users_wrapper" id="users-page">
+      <Heading size="h1"> Working with GET request</Heading>
       <div className="users_stack">
-        <UserCard />
+        <UserCard type="normal" />
       </div>
-      <Button design="yellow" text="Show more" onClick={handleClick} />
+
+      {urlLinks.next_url && isFetchingUsers && <Preloader type="normal" />}
+      {urlLinks.next_url && !isFetchingUsers && (
+        <Button design="yellow" text="Show more" onClick={handleClick} />
+      )}
     </div>
   );
 };
