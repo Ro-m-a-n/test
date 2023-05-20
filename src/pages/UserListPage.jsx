@@ -1,11 +1,11 @@
-import "./userListPage.css";
+// import "./userListPage.css";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../store/appContext";
-import Heading from "../shared/text/heading";
-import UserCard from "../widgets/userCard/userCard";
-import { Button } from "./../shared/button/button";
+import Heading from "../shared/heading";
+import UserCard from "../widgets/userCard";
+import { Button } from "./../shared/button";
 import { getUsers, showMoreUsers } from "../features/asyncFunctions";
-import Preloader from "../shared/preloader/preloader";
+import Preloader from "../shared/preloader";
 
 const UserListPage = () => {
   const { urlLinks, setUrlLinks, usersPageSettings, users, setUsers } =

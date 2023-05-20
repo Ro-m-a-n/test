@@ -104,23 +104,29 @@ const Form = ({ type }) => {
       <Input
         name="name"
         placeholder={"Your name"}
+        onChange={formik.handleChange}
+        value={formik.values.name}
         error={formik.errors.name}
-        {...formik.getFieldProps("name")}
+        onBlur={formik.handleBlur}
       />
       <Input
         name="email"
         placeholder={"Email"}
         type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
         error={formik.errors.email}
-        {...formik.getFieldProps("email")}
+        onBlur={formik.handleBlur}
       />
       <Input
         name="phone"
         placeholder={"Phone"}
         helperText={"+38xxxxxxxxxx"}
         type="tel"
+        onChange={formik.handleChange}
+        value={formik.values.phone}
         error={formik.errors.phone}
-        {...formik.getFieldProps("phone")}
+        onBlur={formik.handleBlur}
       />
 
       <InputRadio name="position_id" positions={positions} formik={formik} />

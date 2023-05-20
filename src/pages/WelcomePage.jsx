@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { AppContext } from "../store/appContext";
-import "./welcomePage.css";
-import Heading from "../shared/text/heading";
-import Text from "../shared/text/text";
-import Button from "../shared/button/button";
+import Heading from "../shared/heading";
+import Text from "../shared/text";
+import Button from "../shared/button";
 import { scrollToLoginForm } from "../features/scrolTo";
-import Header from "../widgets/header/header";
+import Header from "../widgets/header";
 
 const WelcomePage = () => {
   const { setSendedForm } = useContext(AppContext);
@@ -16,7 +15,7 @@ const WelcomePage = () => {
   };
   return (
     <div className="welcomePage_wrapper">
-      <Header type="desktop"/>
+      <Header type="desktop" />
       <div className="backgroundImage" />
       <div className="background">
         <div className="welcomePage">

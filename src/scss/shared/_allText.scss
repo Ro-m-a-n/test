@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans&display=swap");
+// Nunito font. regular 400
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+// adding standart font for all app
+.Text_font__normal {
+  font-family: "Nunito";
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+}
+//style for common text
+
+.Heading_font__normal {
+  font-family: "Nunito";
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+//style for heading
+.text_error {
+  color: red;
+  font-size: small;
+}
+// style for errors
+.text_helper {
+  color: rgb(170, 170, 170);
+  font-size: small;
+}
+// style for helper text

@@ -1,0 +1,13 @@
+.welcomePage_navBar {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  img {
+    margin-left: 10px;
+  }
+  .welcomePage_navBar_buttons {
+    display: flex;
+    z-index: 1;
+  }
+}

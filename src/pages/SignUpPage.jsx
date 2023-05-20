@@ -1,9 +1,8 @@
-import "./signUpPage.css";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../store/appContext";
 import Form from "../widgets/form/form";
 import { getPositions } from "../features/asyncFunctions";
-import Heading from "../shared/text/heading";
+import Heading from "../shared/heading";
 import success from "../assets/image/success-image.svg";
 
 const SignUpPage = () => {
@@ -20,7 +19,7 @@ const SignUpPage = () => {
           <img src={success}></img>
         </div>
       ) : (
-        <Form/>
+        <Form />
       )}
     </div>
   );

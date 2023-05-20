@@ -1,0 +1,12 @@
+.signUp_wrapper {
+  margin: 10px;
+
+  .success_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin: 40px;
+    }
+  }
+}
