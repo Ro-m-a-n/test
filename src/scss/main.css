@@ -13,25 +13,20 @@
   background-position: bottom;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 67vh;
+  height: 650px;
   min-height: 350px;
   max-width: 1170px;
   margin: auto;
   filter: brightness(0.55) contrast(0.8);
 }
-@media (min-width: 901px) and (max-width: 1170px) {
-  .welcomePage_wrapper .backgroundImage {
-    height: 63vh;
-  }
-}
 @media (min-width: 658px) and (max-width: 900px) {
   .welcomePage_wrapper .backgroundImage {
-    height: 49vh;
+    height: 500px;
   }
 }
 @media (max-width: 657px) {
   .welcomePage_wrapper .backgroundImage {
-    height: 62vh;
+    height: 500px;
   }
 }
 .welcomePage_wrapper .background {
@@ -49,12 +44,12 @@
   width: 380px;
   height: 100%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 @media (max-width: 657px) {
   .welcomePage_wrapper .background .welcomePage {
     width: 330px;
-    margin-top: 20px;
+    margin-top: 18px;
   }
 }
 @media (min-width: 658px) and (max-width: 900px) {
@@ -62,20 +57,20 @@
     margin-top: 34px;
   }
 }
-@media (min-width: 901px) and (max-width: 1170px) {
-  .welcomePage_wrapper .background .welcomePage {
-    margin-top: 35px;
-  }
-}
 .welcomePage_wrapper .background .Text {
   margin-top: 20px;
 }
 .welcomePage_wrapper .background .Button {
-  margin-top: 19px;
+  margin-top: 15px;
 }
 @media (min-width: 658px) and (max-width: 900px) {
   .welcomePage_wrapper .background .Button {
     margin-top: 16px;
+  }
+}
+@media (min-width: 1171px) and (max-width: 2560px) {
+  .welcomePage_wrapper .background .Button {
+    margin-top: 17px;
   }
 }
 
@@ -86,12 +81,16 @@
   margin-bottom: 135px;
 }
 .users_wrapper .Heading {
-  margin-top: 144px;
+  margin-top: 139px;
   margin-bottom: 50px;
+}
+@media (min-width: 1171px) and (max-width: 2560px) {
+  .users_wrapper .Heading {
+    margin-bottom: 42px;
+  }
 }
 @media (min-width: 658px) and (max-width: 900px) {
   .users_wrapper .Heading {
-    margin-top: 139px;
     margin-bottom: 40px;
   }
 }
@@ -122,6 +121,13 @@
   .users_wrapper .users_stack {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px 80px;
+    margin-bottom: 44px;
+    margin-top: 10px;
+  }
+}
+@media (min-width: 1171px) and (max-width: 2560px) {
+  .users_wrapper .users_stack {
+    grid-gap: 29px 120px;
     margin-bottom: 44px;
     margin-top: 10px;
   }
@@ -168,33 +174,38 @@
   justify-content: space-between;
   max-width: 1170px;
 }
+.welcomePage_navBar .Button {
+  margin-left: 10px;
+}
+.welcomePage_navBar img {
+  margin-left: 1px;
+}
 .welcomePage_navBar .welcomePage_navBar_buttons {
   display: flex;
   z-index: 1;
 }
-@media (min-width: 901px) and (max-width: 1170px) {
+@media (min-width: 1171px) and (max-width: 2560px) {
   .welcomePage_navBar {
-    margin: 8px 56px;
+    margin: 8px auto;
   }
   .welcomePage_navBar img {
-    margin-left: 3px;
+    margin-left: 0px;
+  }
+}
+@media (min-width: 901px) and (max-width: 1170px) {
+  .welcomePage_navBar {
+    margin: 8px 59px;
   }
 }
 @media (min-width: 658px) and (max-width: 900px) {
   .welcomePage_navBar {
-    margin: 8px 26px;
-  }
-  .welcomePage_navBar img {
-    margin-left: 5px;
+    margin: 8px 31px;
   }
 }
 @media (max-width: 657px) {
   .welcomePage_navBar {
-    margin: 8px 10px;
+    margin: 8px 15px;
   }
-}
-.welcomePage_navBar img {
-  margin-left: 6px;
 }
 
 .user_wrapper {
@@ -217,7 +228,7 @@
 }
 
 .Button {
-  margin: 5px;
+  margin: 5px 0;
   width: 100px;
   height: 34px;
   border-radius: 25px;

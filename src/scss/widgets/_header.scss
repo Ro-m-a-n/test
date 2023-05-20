@@ -4,29 +4,29 @@
   justify-content: space-between;
   max-width: 1170px;
   .Button {
+    margin-left: 10px;
   }
-
+  img {
+    margin-left: 1px;
+  }
   .welcomePage_navBar_buttons {
     display: flex;
     z-index: 1;
   }
 
-  @include media(">tablet", "<=desktop") {
-    margin: 8px 56px;
+  @include media(">desktop", "<=largeDesktop") {
+    margin: 8px auto;
     img {
-      margin-left: 3px;
+      margin-left: 0px;
     }
+  }
+  @include media(">tablet", "<=desktop") {
+    margin: 8px 59px;
   }
   @include media(">phone", "<=tablet") {
-    margin: 8px 26px;
-    img {
-      margin-left: 5px;
-    }
+    margin: 8px 31px;
   }
   @include media("<=phone") {
-    margin: 8px 10px;
-  }
-  img {
-    margin-left: 6px;
+    margin: 8px 15px;
   }
 }

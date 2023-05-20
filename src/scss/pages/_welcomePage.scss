@@ -12,19 +12,17 @@
     background-repeat: no-repeat;
     background-position: bottom;
     object-fit: cover;
-    height: 67vh;
+    height: 650px;
     min-height: 350px;
     max-width: 1170px;
     margin: auto;
     filter: brightness(0.55) contrast(0.8);
-    @include media(">tablet", "<=desktop") {
-      height: 63vh;
-    }
+
     @include media(">phone", "<=tablet") {
-      height: 49vh;
+      height: 500px;
     }
     @include media("<=phone") {
-      height: 62vh;
+      height: 500px
     }
   }
 
@@ -43,26 +41,25 @@
       width: 380px;
       height: 100%;
       margin: auto;
-      margin-top: 30px;
+      margin-top: 35px;
       @include media("<=phone") {
         width: 330px;
-        margin-top: 20px;
+        margin-top: 18px;
       }
       @include media(">phone", "<=tablet") {
         margin-top: 34px;
       }
-      @include media(">tablet", "<=desktop") {
-        margin-top: 35px;
-      }
-     
     }
     .Text {
       margin-top: 20px;
     }
     .Button {
-      margin-top: 19px;
+      margin-top: 15px;
       @include media(">phone", "<=tablet") {
         margin-top: 16px;
+      }
+      @include media(">desktop", "<=largeDesktop") {
+        margin-top: 17px;
       }
     }
   }
