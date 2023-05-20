@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans&display=swap");
 .welcomePage_wrapper {
+  overflow: hidden;
   position: relative;
   min-height: 300px;
-  min-width: 350px;
+  min-width: 340px;
+  width: 100%;
 }
 .welcomePage_wrapper .backgroundImage {
   background-image: url("../assets/image/background.jpeg");
@@ -11,12 +13,26 @@
   background-position: bottom;
   -o-object-fit: cover;
      object-fit: cover;
-  min-height: 40%;
-  height: 70vh;
+  height: 67vh;
   min-height: 350px;
-  max-width: 1200px;
+  max-width: 1170px;
   margin: auto;
   filter: brightness(0.55) contrast(0.8);
+}
+@media (min-width: 901px) and (max-width: 1170px) {
+  .welcomePage_wrapper .backgroundImage {
+    height: 63vh;
+  }
+}
+@media (min-width: 658px) and (max-width: 900px) {
+  .welcomePage_wrapper .backgroundImage {
+    height: 49vh;
+  }
+}
+@media (max-width: 657px) {
+  .welcomePage_wrapper .backgroundImage {
+    height: 62vh;
+  }
 }
 .welcomePage_wrapper .background {
   position: absolute;
@@ -30,37 +46,83 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 340px;
+  width: 380px;
   height: 100%;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 30px;
+}
+@media (max-width: 657px) {
+  .welcomePage_wrapper .background .welcomePage {
+    width: 330px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 658px) and (max-width: 900px) {
+  .welcomePage_wrapper .background .welcomePage {
+    margin-top: 34px;
+  }
+}
+@media (min-width: 901px) and (max-width: 1170px) {
+  .welcomePage_wrapper .background .welcomePage {
+    margin-top: 35px;
+  }
+}
+.welcomePage_wrapper .background .Text {
+  margin-top: 20px;
+}
+.welcomePage_wrapper .background .Button {
+  margin-top: 19px;
+}
+@media (min-width: 658px) and (max-width: 900px) {
+  .welcomePage_wrapper .background .Button {
+    margin-top: 16px;
+  }
 }
 
 .users_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 135px;
+}
+.users_wrapper .Heading {
+  margin-top: 144px;
+  margin-bottom: 50px;
+}
+@media (min-width: 658px) and (max-width: 900px) {
+  .users_wrapper .Heading {
+    margin-top: 139px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 657px) {
+  .users_wrapper .Heading {
+    width: 330px;
+    margin-bottom: 43px;
+  }
+}
+.users_wrapper .Button {
+  width: 120px;
 }
 .users_wrapper .users_stack {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  margin-bottom: 40px;
-  margin-top: 20px;
+  grid-gap: 29px 30px;
+  margin-bottom: 45px;
 }
-@media (max-width: 600px) {
+@media (max-width: 657px) {
   .users_wrapper .users_stack {
     grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin-bottom: 10px;
+    grid-gap: 21px;
+    margin-bottom: 42px;
     margin-top: 5px;
   }
 }
-@media (min-width: 601px) and (max-width: 768px) {
+@media (min-width: 658px) and (max-width: 900px) {
   .users_wrapper .users_stack {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    margin-bottom: 20px;
+    grid-gap: 16px 80px;
+    margin-bottom: 44px;
     margin-top: 10px;
   }
 }
@@ -81,25 +143,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 380px;
+  margin: 0 auto;
   margin-bottom: 50px;
 }
+@media (max-width: 657px) {
+  .form_wrapper {
+    width: 330px;
+  }
+}
+.form_wrapper .Text {
+  margin-top: 15px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
 .form_wrapper .form_btn {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .welcomePage_navBar {
-  margin: auto;
+  margin: 8px auto;
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
-}
-.welcomePage_navBar img {
-  margin-left: 10px;
+  max-width: 1170px;
 }
 .welcomePage_navBar .welcomePage_navBar_buttons {
   display: flex;
   z-index: 1;
+}
+@media (min-width: 901px) and (max-width: 1170px) {
+  .welcomePage_navBar {
+    margin: 8px 56px;
+  }
+  .welcomePage_navBar img {
+    margin-left: 3px;
+  }
+}
+@media (min-width: 658px) and (max-width: 900px) {
+  .welcomePage_navBar {
+    margin: 8px 26px;
+  }
+  .welcomePage_navBar img {
+    margin-left: 5px;
+  }
+}
+@media (max-width: 657px) {
+  .welcomePage_navBar {
+    margin: 8px 10px;
+  }
+}
+.welcomePage_navBar img {
+  margin-left: 6px;
 }
 
 .user_wrapper {
@@ -123,8 +218,9 @@
 
 .Button {
   margin: 5px;
-  padding: 5px 27px;
-  border-radius: 20px;
+  width: 100px;
+  height: 34px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
 }
@@ -138,16 +234,15 @@
 }
 
 .user_photo {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   margin-bottom: 20px;
 }
 
 .Input_wrap {
-  width: 40%;
-  min-width: 300px;
-  margin: 14px;
+  width: 100%;
+  margin-top: 50px;
   position: relative;
 }
 .Input_wrap input {
@@ -156,12 +251,16 @@
   border-radius: 5px;
   border: 1px solid rgb(170, 170, 170);
   box-sizing: border-box;
-  padding: 0 31px;
+  padding: 0 15px;
 }
 .Input_wrap input::-moz-placeholder {
+  text-align: left;
+  margin-left: 0px;
   color: rgb(170, 170, 170);
 }
 .Input_wrap input::placeholder {
+  text-align: left;
+  margin-left: 0px;
   color: rgb(170, 170, 170);
 }
 .Input_wrap .Input_label {
@@ -174,25 +273,30 @@
 }
 
 .inputRadio_stack {
-  height: 120px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
   min-width: 300px;
 }
 .inputRadio_stack .inputRadio_wrapper {
   display: flex;
-  height: 30px;
   position: relative;
-  padding-left: 30px;
+  padding-left: 32px;
   align-items: center;
 }
 .inputRadio_stack .inputRadio_wrapper input {
+  height: 20px;
+  width: 20px;
   position: absolute;
-  left: 0;
-  top: 5px;
+  left: -6px;
+  top: 0;
   accent-color: #05a3b4;
+}
+.inputRadio_stack .inputRadio_wrapper .Text {
+  color: rgb(0, 17, 255);
+  margin: 0;
 }
 
 .lds-ring {
@@ -246,6 +350,7 @@ body {
 }
 
 .Heading_font__normal {
+  margin: 0;
   font-family: "Nunito";
   font-size: 40px;
   line-height: 40px;
@@ -273,15 +378,15 @@ body {
 }
 
 .DownloadFile_wrap {
-  width: 40%;
-  min-width: 300px;
+  width: 100%;
   box-sizing: "border-box";
-  margin: 14px;
+  margin-top: 41px;
+  margin-bottom: 17px;
 }
 .DownloadFile_wrap .DownloadFile {
   display: grid;
   grid-template-areas: "a b";
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 82px 1fr;
   width: 100%;
   height: 55px;
 }
@@ -299,7 +404,7 @@ body {
   grid-area: "b";
   display: flex;
   align-items: center;
-  padding: 0 31px;
+  padding: 0 17px;
   border-top: 1px solid rgb(170, 170, 170);
   border-right: 1px solid rgb(170, 170, 170);
   border-bottom: 1px solid rgb(170, 170, 170);

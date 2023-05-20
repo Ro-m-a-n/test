@@ -1,19 +1,31 @@
+@import "../forMediaQueries/brakepoints";
+
 .welcomePage_wrapper {
+  overflow: hidden;
   position: relative;
   min-height: 300px;
-  min-width: 350px;
+  min-width: 340px;
+  width: 100%;
   .backgroundImage {
     background-image: url("../assets/image/background.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     object-fit: cover;
-    min-height: 40%;
-    height: 70vh;
+    height: 67vh;
     min-height: 350px;
-    max-width: 1200px;
+    max-width: 1170px;
     margin: auto;
     filter: brightness(0.55) contrast(0.8);
+    @include media(">tablet", "<=desktop") {
+      height: 63vh;
+    }
+    @include media(">phone", "<=tablet") {
+      height: 49vh;
+    }
+    @include media("<=phone") {
+      height: 62vh;
+    }
   }
 
   .background {
@@ -28,10 +40,30 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 340px;
+      width: 380px;
       height: 100%;
       margin: auto;
-      margin-top: 15px;
+      margin-top: 30px;
+      @include media("<=phone") {
+        width: 330px;
+        margin-top: 20px;
+      }
+      @include media(">phone", "<=tablet") {
+        margin-top: 34px;
+      }
+      @include media(">tablet", "<=desktop") {
+        margin-top: 35px;
+      }
+     
+    }
+    .Text {
+      margin-top: 20px;
+    }
+    .Button {
+      margin-top: 19px;
+      @include media(">phone", "<=tablet") {
+        margin-top: 16px;
+      }
     }
   }
 }

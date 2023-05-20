@@ -1,7 +1,6 @@
 .Input_wrap {
-  width: 40%;
-  min-width: 300px;
-  margin: 14px;
+  width:100%;
+  margin-top: 50px;
   position: relative;
   input {
     width: 100%;
@@ -9,8 +8,10 @@
     border-radius: 5px;
     border: 1px solid rgb(170, 170, 170);
     box-sizing: border-box;
-    padding: 0 31px;
+    padding: 0 15px;
     &::placeholder {
+      text-align: left;
+      margin-left: 0px;
       color: rgb(170, 170, 170);
     }
   }

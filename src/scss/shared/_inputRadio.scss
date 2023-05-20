@@ -1,24 +1,29 @@
 .inputRadio_stack {
-  height: 120px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
   min-width: 300px;
 
   .inputRadio_wrapper {
     display: flex;
-    height: 30px;
     position: relative;
-    padding-left: 30px;
+    padding-left: 32px;
     align-items: center;
+
     input {
+      height: 20px;
+      width: 20px;
       position: absolute;
-      left: 0;
-      top: 5px;
+      left: -6px;
+      top: 0;
       accent-color: #05a3b4;
     }
 
-    
+    .Text {
+      color: rgb(0, 17, 255);
+      margin: 0;
+    }
   }
 }

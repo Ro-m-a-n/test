@@ -1,13 +1,32 @@
 .welcomePage_navBar {
-  margin: auto;
+  margin: 8px auto;
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
-  img {
-    margin-left: 10px;
+  max-width: 1170px;
+  .Button {
   }
+
   .welcomePage_navBar_buttons {
     display: flex;
     z-index: 1;
+  }
+
+  @include media(">tablet", "<=desktop") {
+    margin: 8px 56px;
+    img {
+      margin-left: 3px;
+    }
+  }
+  @include media(">phone", "<=tablet") {
+    margin: 8px 26px;
+    img {
+      margin-left: 5px;
+    }
+  }
+  @include media("<=phone") {
+    margin: 8px 10px;
+  }
+  img {
+    margin-left: 6px;
   }
 }

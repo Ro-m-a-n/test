@@ -9,6 +9,7 @@ import { emailPattern } from "./pattern";
 import { AppContext } from "../../store/appContext";
 import { getUsers, signUp } from "../../features/asyncFunctions";
 import Preloader from "../../shared/preloader";
+import Text from "../../shared/text";
 
 const Form = ({ type }) => {
   const { positions, usersPageSettings, setUrlLinks, setUsers, setSendedForm } =
@@ -100,7 +101,6 @@ const Form = ({ type }) => {
       className="form_wrapper"
       id="login-form"
     >
-      <Heading size="h1">Working with POST request</Heading>
       <Input
         name="name"
         placeholder={"Your name"}
@@ -122,6 +122,7 @@ const Form = ({ type }) => {
         error={formik.errors.phone}
         {...formik.getFieldProps("phone")}
       />
+      <Text> Select your position </Text>
 
       <InputRadio name="position_id" positions={positions} formik={formik} />
 

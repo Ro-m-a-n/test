@@ -2,9 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 380px;
+  margin: 0 auto;
   margin-bottom: 50px;
+
+  @include media("<=phone") {
+    width: 330px;
+  }
+
+  .Text {
+    margin-top: 15px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
   .form_btn {
-    margin-top: 30px;
+    margin-top: 28px;
   }
 }
