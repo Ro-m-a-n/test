@@ -16,7 +16,7 @@ const WelcomePage = () => {
   return (
     <div className="welcomePage_wrapper">
       <Header type="desktop" />
-      {/* <div className="backgroundImage" max-age="31536000"/> */}
+      <div className="backgroundImage"/>
       <div className="background">
         <div className="welcomePage">
           <Heading size="h1" font="normal" color="white">

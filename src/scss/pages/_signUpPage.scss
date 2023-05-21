@@ -1,14 +1,15 @@
 @import "../global/variables";
+@import "../global/brakepoints";
+
 .signUp_wrapper {
   min-width: $min_width;
   margin: 10px;
-.Heading{
-  height: 40px;
-  @include media("<=phone") {
-    height: 80px;
-    
+  .Heading {
+    height: 40px;
+    @include media("<=phone") {
+      height: 80px;
+    }
   }
-}
   .success_wrapper {
     display: flex;
     flex-direction: column;

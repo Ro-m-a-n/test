@@ -27,6 +27,7 @@
 }
 @media (max-width: 657px) {
   .welcomePage_wrapper .backgroundImage {
+    background-image: url("../assets/image/backgroundMobile.webp");
     height: 500px;
   }
 }
