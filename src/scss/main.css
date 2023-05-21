@@ -144,6 +144,11 @@
     margin-top: 10px;
   }
 }
+@media (min-width: 2561px) {
+  .users_wrapper .users_stack {
+    grid-gap: 29px 120px;
+  }
+}
 
 .signUp_wrapper {
   min-width: 340px;
@@ -307,7 +312,10 @@
   position: absolute;
   font-size: small;
   background-color: #f8f8f8;
-  top: -13px;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  top: 0px;
   left: 29px;
   padding: 0 4px;
 }

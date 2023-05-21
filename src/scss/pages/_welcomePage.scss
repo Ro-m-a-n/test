@@ -47,9 +47,8 @@
         width: 330px;
         margin-top: 17px;
       }
-     
     }
-    .Heading{
+    .Heading {
       height: 80px; //to improve cls
       @include media("<=phone") {
         height: 120px; //to improve cls

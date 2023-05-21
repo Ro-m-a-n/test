@@ -1,5 +1,5 @@
 @import "../forMediaQueries/brakepoints";
-@import "../global/variables";
+
 .users_wrapper {
   display: flex;
   flex-direction: column;
@@ -48,6 +48,9 @@
       grid-gap: 29px 120px;
       margin-bottom: 44px;
       margin-top: 10px;
+    }
+    @include media(">largeDesktop") {
+      grid-gap: 29px 120px;
     }
   }
 }
