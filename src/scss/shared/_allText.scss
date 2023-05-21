@@ -5,7 +5,7 @@ body {
   font-size: 16px;
   line-height: 26px;
 }
-// adding standart font for all app
+// adding standart font for whole app
 .Text_font__normal {
   font-family: "Nunito";
   font-size: 16px;
@@ -15,6 +15,7 @@ body {
 //style for common text
 
 .Heading_font__normal {
+  font-weight: 400;
   margin: 0;
   font-family: "Nunito";
   font-size: 40px;

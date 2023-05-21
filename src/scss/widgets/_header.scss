@@ -3,10 +3,13 @@
   display: flex;
   justify-content: space-between;
   max-width: 1170px;
+
   .Button {
     margin-left: 10px;
   }
   img {
+    width: 104px;
+    height: 44px;
     margin-left: 1px;
   }
   .welcomePage_navBar_buttons {
@@ -27,6 +30,9 @@
     margin: 8px 31px;
   }
   @include media("<=phone") {
-    margin: 8px 15px;
+    margin: 8px 16px;
+    img {
+      margin-left: 0px;
+    }
   }
 }

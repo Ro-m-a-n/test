@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../store/appContext";
 import Form from "../widgets/form/form";
 import { getPositions } from "../features/asyncFunctions";
@@ -21,7 +21,7 @@ const SignUpPage = () => {
 
       {sendedForm ? (
         <div className="success_wrapper">
-          <img src={success}></img>
+          <img src={success} alt="success"></img>
         </div>
       ) : (
         <Form />
