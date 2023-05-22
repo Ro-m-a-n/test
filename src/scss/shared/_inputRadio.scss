@@ -1,28 +1,52 @@
 .inputRadio_stack {
-  height: 130px;
+  height: 125px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   min-width: 300px;
+  margin-bottom: 5px;
 
   .inputRadio_wrapper {
     display: flex;
-    position: relative;
-    padding-left: 32px;
     align-items: center;
+    height: 27px;
+    padding: 0;
+    position: relative;
 
     input {
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      left: -6px;
-      top: 0;
-      accent-color: #05a3b4;
+      display: none;
+
+      & + label {
+        display: inline-block;
+        position: relative;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #bdbdbd;
+      }
+
+      &:checked + label:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #05a3b4;
+      }
+      &:checked + label {
+        border-color: #05a3b4;
+      }
     }
 
     .Text {
+      position: absolute;
+      top: -4px;
       margin: 0;
+      margin-left: 32px;
+      width: 300px;
     }
   }
 }

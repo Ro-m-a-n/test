@@ -299,6 +299,10 @@
   box-sizing: border-box;
   padding: 0 15px;
 }
+.Input_wrap input:focus {
+  outline: none;
+  border-color: black;
+}
 .Input_wrap input::-moz-placeholder {
   text-align: left;
   margin-left: 0px;
@@ -322,29 +326,51 @@
 }
 
 .inputRadio_stack {
-  height: 130px;
+  height: 125px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   min-width: 300px;
+  margin-bottom: 5px;
 }
 .inputRadio_stack .inputRadio_wrapper {
   display: flex;
-  position: relative;
-  padding-left: 32px;
   align-items: center;
+  height: 27px;
+  padding: 0;
+  position: relative;
 }
 .inputRadio_stack .inputRadio_wrapper input {
-  height: 20px;
-  width: 20px;
+  display: none;
+}
+.inputRadio_stack .inputRadio_wrapper input + label {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #bdbdbd;
+}
+.inputRadio_stack .inputRadio_wrapper input:checked + label:before {
+  content: "";
   position: absolute;
-  left: -6px;
-  top: 0;
-  accent-color: #05a3b4;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #05a3b4;
+}
+.inputRadio_stack .inputRadio_wrapper input:checked + label {
+  border-color: #05a3b4;
 }
 .inputRadio_stack .inputRadio_wrapper .Text {
+  position: absolute;
+  top: -4px;
   margin: 0;
+  margin-left: 32px;
+  width: 300px;
 }
 
 .lds-ring {

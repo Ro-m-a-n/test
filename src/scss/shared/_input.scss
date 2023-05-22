@@ -10,6 +10,10 @@
     border: 1px solid rgb(170, 170, 170);
     box-sizing: border-box;
     padding: 0 15px;
+    &:focus {
+      outline:none;
+      border-color: black;
+    }
     &::placeholder {
       text-align: left;
       margin-left: 0px;

@@ -13,6 +13,7 @@ const InputRadio = ({ name, positions, formik }) => {
           checked={formik.values[name] === position.id.toString()}
           onChange={formik.handleChange}
         />
+
         <label htmlFor={position.id}>
           <Text>{position.name}</Text>
         </label>
