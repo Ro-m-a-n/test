@@ -35,7 +35,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 650px;
+  height: 100%;
   width: 100%;
 }
 .welcomePage_wrapper .background .welcomePage {
@@ -44,8 +44,9 @@
   align-items: center;
   justify-content: center;
   width: 380px;
-  height: 650px;
+  height: 100%;
   margin: auto;
+  margin-top: 33px;
 }
 @media (max-width: 657px) {
   .welcomePage_wrapper .background .welcomePage {
